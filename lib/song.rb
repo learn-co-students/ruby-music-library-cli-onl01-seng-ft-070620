@@ -1,6 +1,8 @@
 # require 'pry'
 
 class Song
+    extend Concerns::Findable
+
     attr_accessor :name
     attr_reader :artist, :genre
     @@all = []
@@ -12,14 +14,19 @@ class Song
     end
 
     def self.new_from_filename(filename)
-        element = filename.split(" - ") 
+        element = filename.gsub(".mp3", "").split(" - ") 
         artist = element[0]
         name = element[1]
-        genre = element[3]
-        song = Song.new
-        song.artist = artist
-        song.name = name
-        song.genre = genre
+        genre = element[2]
+        song = Song.new(name)
+        song.artist = Artist.find_or_create_by_name(artist)
+        song.genre = Genre.find_or_create_by_name(genre)
+        song
+    end
+
+    def self.create_from_filename(filename)
+        song = self.new_from_filename(filename)
+        song.save
     end
 
     def self.find_by_name(name)

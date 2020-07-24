@@ -1,5 +1,6 @@
 class MusicImporter
     attr_accessor :path
+    attr_reader :filename
 
     @@all = []
 
@@ -10,6 +11,10 @@ class MusicImporter
 
     def files
         Dir.children("spec/fixtures/mp3s/")
+    end
+
+    def import
+       self.files.each {|filename| Song.create_from_filename(filename)}
     end
 
     
