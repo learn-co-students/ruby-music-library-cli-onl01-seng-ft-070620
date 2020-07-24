@@ -2,8 +2,7 @@
 class MusicLibraryController
 
     def initialize(path = "./db/mp3s")
-        song_imp = MusicImporter.new(path)
-        song_imp.import 
+        MusicImporter.new(path).import
     end 
 
     def call
@@ -15,6 +14,7 @@ class MusicLibraryController
         puts "To list all of the songs of a particular genre, enter 'list genre'."
         puts "To play a song, enter 'play song'."
         puts "To quit, type 'exit'."
+        
         user_input = ""
         until user_input == "exit"
             puts "What would you like to do?"
