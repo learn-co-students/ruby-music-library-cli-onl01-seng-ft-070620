@@ -24,9 +24,4 @@ class Artist
         self.songs.collect{|song| song.genre}.uniq
     end
 
-    def create(name)
-        inst = self.new(name)
-        inst.save
-        inst
-    end
 end
