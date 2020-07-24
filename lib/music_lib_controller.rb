@@ -1,5 +1,4 @@
 
-
 class MusicLibraryController
 
     def initialize(path = "./db/mp3s")
@@ -20,7 +19,21 @@ class MusicLibraryController
         until user_input == "exit"
             puts "What would you like to do?"
             user_input = gets.chomp
-            end
+            case user_input
+            when "list songs"
+                self.list_songs 
+            when "list artists"
+                self.list_artists
+            when "list genres"
+                self.list_genres 
+            when "list artist"
+                self.list_songs_by_artist
+            when "list genre"
+                self.list_songs_by_genre 
+            when "play song"
+                self.play_song
+            end 
+        end
     end
 
     def list_songs
@@ -66,8 +79,11 @@ class MusicLibraryController
 
     def play_song
         puts "Which song number would you like to play?"
-        user_input = gets.chomp
-        puts "Playing SONGNAME by ARTIST"
+        user_input = gets.chomp.to_i
+        if (1..Song.all.length).include?(user_input)
+            song_array = Song.all.sort {|a, b| a.name <=> b.name}.uniq
+            puts "Playing #{song_array[user_input - 1].name} by #{song_array[user_input - 1].artist.name}"
+        end 
     end 
     
 end 
