@@ -4,9 +4,6 @@ require 'pry'
 class MusicLibraryController
 
     def initialize(path="./db/mp3s")
-        Song.destroy_all
-        Artist.destroy_all
-        Genre.destroy_all
         music_importer = MusicImporter.new(path)
         music_importer.import
     end
