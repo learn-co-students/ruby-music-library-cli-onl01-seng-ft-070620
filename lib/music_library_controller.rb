@@ -27,8 +27,30 @@ attr_accessor :path
 
     def list_songs
         sorted_list = Song.all.sort { |a, b| a.name <=> b.name }
-        sorted_list.each_with_index { |song, num| puts "#{num}. #{song.artist.name} - #{song.name} - #{song.genre.name}" }
+        sorted_list.each_with_index { |song, num| puts "#{num + 1}. #{song.artist.name} - #{song.name} - #{song.genre.name}" }
     end
+
+    def list_artists
+        sorted_list = Artist.all.sort { |a, b| a.name <=> b.name }
+        sorted_list.each_with_index { |artist, num| puts "#{num}. #{artist.name} - #{artist.song.name} - #{artist.genres.name}" }
+    end 
+
+    def list_genres
+        sorted_list = Genre.all.sort { |a, b| a.name <=> b.name }
+        sorted_list.each_with_index { |genre, num| puts "#{num}. #{genre.artist.name} - #{genre.song.name} - #{genre.name}" }
+    end 
+
+    def list_songs_by_artist
+
+    end 
+
+    def list_songs_by_genre
+
+    end 
+
+    def play_song
+
+    end 
 
 
 end 
