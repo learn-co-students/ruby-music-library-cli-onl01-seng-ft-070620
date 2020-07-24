@@ -3,7 +3,7 @@ require "spec_helper"
 describe "MusicLibraryController - CLI Methods" do
   let(:music_library_controller) { MusicLibraryController.new("./spec/fixtures/mp3s") }
   let(:other_music_library_controller) { MusicLibraryController.new("./spec/fixtures/other_mp3s") }
-
+  
   describe "#list_songs" do
     it "prints all songs in the music library in a numbered list (alphabetized by song name)" do
       expect($stdout).to receive(:puts).with("1. Thundercat - For Love I Come - dance")
@@ -26,26 +26,26 @@ describe "MusicLibraryController - CLI Methods" do
   end
 
   describe "#list_artists" do
-    it "prints all artists in the music library in a numbered list (alphabetized by artist name)" do
-      expect($stdout).to receive(:puts).with("1. Action Bronson")
-      expect($stdout).to receive(:puts).with("2. Jurassic 5")
-      expect($stdout).to receive(:puts).with("3. Real Estate")
-      expect($stdout).to receive(:puts).with("4. Thundercat")
-
-      music_library_controller.list_artists
-    end
-
-    it "is not hard-coded" do
-      Artist.create("ZZ Top")
-
-      expect($stdout).to receive(:puts).with("1. Alpha 9")
-      expect($stdout).to receive(:puts).with("2. Bob Dylan")
-      expect($stdout).to receive(:puts).with("3. Cass McCombs")
-      expect($stdout).to receive(:puts).with("4. ZZ Top")
-
-      other_music_library_controller.list_artists
-    end
-  end
+   it "prints all artists in the music library in a numbered list (alphabetized by artist name)" do
+     expect($stdout).to receive(:puts).with("1. Action Bronson")
+     expect($stdout).to receive(:puts).with("2. Jurassic 5")
+     expect($stdout).to receive(:puts).with("3. Real Estate")
+     expect($stdout).to receive(:puts).with("4. Thundercat")
+ 
+     music_library_controller.list_artists
+   end
+ 
+   it "is not hard-coded" do
+     Artist.create("ZZ Top")
+ 
+     expect($stdout).to receive(:puts).with("1. Alpha 9")
+     expect($stdout).to receive(:puts).with("2. Bob Dylan")
+     expect($stdout).to receive(:puts).with("3. Cass McCombs")
+     expect($stdout).to receive(:puts).with("4. ZZ Top")
+ 
+     other_music_library_controller.list_artists
+   end
+ end
 
   describe "#list_genres" do
     it "prints all genres in the music library in a numbered list (alphabetized by genre name)" do

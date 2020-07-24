@@ -1,8 +1,9 @@
 require "spec_helper"
+require 'pry'
 
 describe "MusicImporter" do
   let(:music_importer) { MusicImporter.new("./spec/fixtures/mp3s") }
-
+  
   describe "#initialize" do
     it "accepts a file path to parse MP3 files from" do
       expect(music_importer.instance_variable_defined?(:@path)).to be(true)
