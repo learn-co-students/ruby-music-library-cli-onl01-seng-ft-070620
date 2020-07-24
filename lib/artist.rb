@@ -17,14 +17,7 @@ class Artist
         @@all << self
     end
 
-    def self.create(name)
-        artist = self.new(name)
-        artist.save
-        artist
-    end
-
     def songs
-        Song.all.each{|song| @songs << song if song.artist == self}
         @songs
     end
 

@@ -1,7 +1,6 @@
 class Genre
     extend Concerns::Findable
 
-
     attr_accessor :name, :songs, :genre
     @@all = []
 
@@ -18,14 +17,7 @@ class Genre
         @@all << self
     end
 
-    def self.create(name)
-        genre = self.new(name)
-        genre.save
-        genre
-    end
-
     def songs
-        Song.all.each{|song| @songs << song if song.genre == self}
         @songs
     end
 
@@ -37,5 +29,4 @@ class Genre
         song.genre = self unless song.genre
         songs << song unless songs.include?(song)
     end
-
 end

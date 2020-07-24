@@ -9,9 +9,7 @@ class MusicLibraryController
     end
 
     def list_songs
-        sorted_songs = Song.all.sort_by{|song| song.name}
-
-        sorted_songs.each_with_index do |song, index|
+        Song.all.sort_by{|song| song.name}.each_with_index do |song, index|
             puts "#{index + 1}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
         end
     end
@@ -20,9 +18,7 @@ class MusicLibraryController
         puts "Please enter the name of an artist:"
         input = gets.chomp()
 
-        sorted_songs = Song.all.select{|song| song.artist.name == input}.sort_by{|song| song.name}
-
-        sorted_songs.each_with_index do |song, index|
+        Song.all.select{|song| song.artist.name == input}.sort_by{|song| song.name}.each_with_index do |song, index|
             puts "#{index + 1}. #{song.name} - #{song.genre.name}"
         end
     end
@@ -31,25 +27,19 @@ class MusicLibraryController
         puts "Please enter the name of a genre:"
         input = gets.chomp()
 
-        sorted_songs = Song.all.select{|song| song.genre.name == input}.sort_by{|song| song.name}
-
-        sorted_songs.each_with_index do |song, index|
+        Song.all.select{|song| song.genre.name == input}.sort_by{|song| song.name}.each_with_index do |song, index|
             puts "#{index + 1}. #{song.artist.name} - #{song.name}"
         end
     end
 
     def list_artists
-        sorted_artists = Artist.all.sort_by{|artist| artist.name}
-
-        sorted_artists.each_with_index do |artist, index|
+        Artist.all.sort_by{|artist| artist.name}.each_with_index do |artist, index|
             puts "#{index + 1}. #{artist.name}"
         end
     end
 
     def list_genres
-        sorted_genres = Genre.all.sort_by{|genre| genre.name}
-
-        sorted_genres.each_with_index do |genre, index|
+        Genre.all.sort_by{|genre| genre.name}.each_with_index do |genre, index|
             puts "#{index + 1}. #{genre.name}"
         end
     end
@@ -83,20 +73,13 @@ class MusicLibraryController
             input = gets.chomp()
 
             case input
-            when "list songs"
-                list_songs
-            when "list artists"
-                list_artists
-            when "list genres"
-                list_genres
-            when "list artist"
-                list_songs_by_artist
-            when "list genre"
-                list_songs_by_genre
-            when "play song"
-                play_song
-            when "exit"
-                quit = 1
+            when "list songs" then list_songs
+            when "list artists" then list_artists
+            when "list genres" then list_genres
+            when "list artist" then list_songs_by_artist
+            when "list genre" then list_songs_by_genre
+            when "play song" then play_song
+            when "exit" then quit = 1
             end
         end
     end

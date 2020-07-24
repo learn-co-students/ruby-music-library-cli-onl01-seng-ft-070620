@@ -1,7 +1,6 @@
 class Song
     extend Concerns::Findable
 
-
     attr_accessor :name
     attr_reader :artist, :genre
     @@all = []
@@ -18,12 +17,6 @@ class Song
 
     def save
         @@all << self
-    end
-
-    def self.create(name)
-        song = self.new(name)
-        song.save
-        song
     end
 
     def artist=(artist)
@@ -49,5 +42,4 @@ class Song
         song = new_from_filename(filename)
         song.save
     end
-
 end
