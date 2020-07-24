@@ -8,7 +8,7 @@ class MusicImporter
     end 
 
     def files 
-        Dir.children("spec/fixtures/mp3s/")
+        @files ||= Dir.glob("#{path}/*.mp3").collect{ |f| f.gsub("#{path}/", "") }
     end 
 
     def import
