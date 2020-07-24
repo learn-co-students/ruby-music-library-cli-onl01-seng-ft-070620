@@ -22,17 +22,16 @@ class MusicLibraryController
         puts "To quit, type 'exit'."
         puts "What would you like to do?"
         input = gets.chomp
-        case input
-        # when "list songs"
-        #     Song.all.each{|song| puts song.name}
-        # when "list artists"
-        #     Artist.all.each{|artist| puts artist.name}
-        # when "list genres"
-        #     Genre.all.each{|genre| puts genre.name}
-        when "exit"
-            exit
-        else
+        until input == "exit"
             input = gets.chomp
+            # case input
+            # when "list songs"
+            #     Song.all.each{|song| puts song.name}
+            # when "list artists"
+            #     Artist.all.each{|artist| puts artist.name}
+            # when "list genres"
+            #     Genre.all.each{|genre| puts genre.name}
+            # end
         end
     end
 
@@ -74,13 +73,13 @@ class MusicLibraryController
         if Genre.find_by_name(g)
             sorted = Genre.find_by_name(g).songs.sort_by{|song| song.name}
             sorted.each_with_index do |song, i|
-                puts "#{i+1}. #{song.name} - #{song.genre.name}"
+                puts "#{i+1}. #{song.artist.name} - #{song.name}"
             end
         end
     end
 
     def play_song
-
+        puts "Which song number would you like to play?"
     end
 
 
