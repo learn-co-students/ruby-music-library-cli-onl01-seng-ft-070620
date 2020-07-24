@@ -90,8 +90,8 @@ class MusicLibraryController
 
   def play_song
     puts "Which song number would you like to play?"
-    index = gets.chomp.to_i-1
-    if (0...Song.all.length-1).include?(index)
+    index = gets.chomp.to_i - 1
+    if (0...Song.all.length).include?(index)
       binding.pry
       array = Song.all.sort {|a,b| a.name <=> b.name}
       puts "Playing #{array[index].name} by #{array[index].artist.name}"
