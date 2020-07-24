@@ -49,7 +49,7 @@ class MusicLibraryController
   end #call
 
   def list_songs
-    Song.all.sort {|a,b| a.name <=> b.name}.uniq.each_with_index do |song, i|
+    Song.all.sort {|a,b| a.name <=> b.name}.each_with_index do |song, i|
       puts "#{i+1}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
     end #do
   end #list_songs
@@ -93,7 +93,7 @@ class MusicLibraryController
     index = gets.chomp.to_i-1
     if (0...Song.all.length-1).include?(index)
       binding.pry
-      array = Song.all.sort {|a,b| a.name <=> b.name}.uniq
+      array = Song.all.sort {|a,b| a.name <=> b.name}
       puts "Playing #{array[index].name} by #{array[index].artist.name}"
     end #if
   end #play_song
