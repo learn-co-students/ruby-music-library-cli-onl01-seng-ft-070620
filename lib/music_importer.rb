@@ -10,12 +10,10 @@ class MusicImporter
     end
 
     def files
-        Dir.children("spec/fixtures/mp3s/")
+        Dir.children(self.path)
     end
 
     def import
        self.files.each {|filename| Song.create_from_filename(filename)}
     end
-
-    
 end

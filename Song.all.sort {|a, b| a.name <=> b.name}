@@ -1,0 +1,68 @@
+=> [[32m#<Song:0x00007fffdcde4138[0m
+  @artist[32m=[0m[32m#<Artist:0x00007fffdcde4048[0m @name[32m=[0m[31m[1;31m"[0m[31mAction Bronson[1;31m"[0m[31m[0m, @songs[32m=[0m[[32m#<Song:0x00007fffdcde4138[0m ...[32m>[0m][32m>[0m,
+  @genre[32m=[0m[32m#<Genre:0x00007fffdcdf7f80[0m @name[32m=[0m[31m[1;31m"[0m[31mindie[1;31m"[0m[31m[0m, @songs[32m=[0m[[32m#<Song:0x00007fffdcde4138[0m ...[32m>[0m][32m>[0m,
+  @name[32m=[0m[31m[1;31m"[0m[31mLarry Csonka[1;31m"[0m[31m[0m[32m>[0m,
+ [32m#<Song:0x00007fffdcdf7d78[0m
+  @artist[32m=[0m[32m#<Artist:0x00007fffdcdf7d00[0m @name[32m=[0m[31m[1;31m"[0m[31mJurassic 5[1;31m"[0m[31m[0m, @songs[32m=[0m[[32m#<Song:0x00007fffdcdf7d78[0m ...[32m>[0m][32m>[0m,
+  @genre[32m=[0m
+   [32m#<Genre:0x00007fffdcdf7c60[0m
+    @name[32m=[0m[31m[1;31m"[0m[31mhip-hop[1;31m"[0m[31m[0m,
+    @songs[32m=[0m
+     [[32m#<Song:0x00007fffdcdf7d78[0m ...[32m>[0m,
+      [32m#<Song:0x00007fffdcdf7710[0m
+       @artist[32m=[0m
+        [32m#<Artist:0x00007fffdcdf79e0[0m
+         @name[32m=[0m[31m[1;31m"[0m[31mReal Estate[1;31m"[0m[31m[0m,
+         @songs[32m=[0m
+          [[32m#<Song:0x00007fffdcdf7a58[0m
+            @artist[32m=[0m[32m#<Artist:0x00007fffdcdf79e0[0m ...[32m>[0m,
+            @genre[32m=[0m[32m#<Genre:0x00007fffdcdf7940[0m @name[32m=[0m[31m[1;31m"[0m[31mcountry[1;31m"[0m[31m[0m, @songs[32m=[0m[[32m#<Song:0x00007fffdcdf7a58[0m ...[32m>[0m][32m>[0m,
+            @name[32m=[0m[31m[1;31m"[0m[31mGreen Aisles[1;31m"[0m[31m[0m[32m>[0m,
+           [32m#<Song:0x00007fffdcdf7710[0m ...[32m>[0m][32m>[0m,
+       @genre[32m=[0m[32m#<Genre:0x00007fffdcdf7c60[0m ...[32m>[0m,
+       @name[32m=[0m[31m[1;31m"[0m[31mIt's Real[1;31m"[0m[31m[0m[32m>[0m][32m>[0m,
+  @name[32m=[0m[31m[1;31m"[0m[31mWhat's Golden[1;31m"[0m[31m[0m[32m>[0m,
+ [32m#<Song:0x00007fffdcdf7a58[0m
+  @artist[32m=[0m
+   [32m#<Artist:0x00007fffdcdf79e0[0m
+    @name[32m=[0m[31m[1;31m"[0m[31mReal Estate[1;31m"[0m[31m[0m,
+    @songs[32m=[0m
+     [[32m#<Song:0x00007fffdcdf7a58[0m ...[32m>[0m,
+      [32m#<Song:0x00007fffdcdf7710[0m
+       @artist[32m=[0m[32m#<Artist:0x00007fffdcdf79e0[0m ...[32m>[0m,
+       @genre[32m=[0m
+        [32m#<Genre:0x00007fffdcdf7c60[0m
+         @name[32m=[0m[31m[1;31m"[0m[31mhip-hop[1;31m"[0m[31m[0m,
+         @songs[32m=[0m
+          [[32m#<Song:0x00007fffdcdf7d78[0m
+            @artist[32m=[0m[32m#<Artist:0x00007fffdcdf7d00[0m @name[32m=[0m[31m[1;31m"[0m[31mJurassic 5[1;31m"[0m[31m[0m, @songs[32m=[0m[[32m#<Song:0x00007fffdcdf7d78[0m ...[32m>[0m][32m>[0m,
+            @genre[32m=[0m[32m#<Genre:0x00007fffdcdf7c60[0m ...[32m>[0m,
+            @name[32m=[0m[31m[1;31m"[0m[31mWhat's Golden[1;31m"[0m[31m[0m[32m>[0m,
+           [32m#<Song:0x00007fffdcdf7710[0m ...[32m>[0m][32m>[0m,
+       @name[32m=[0m[31m[1;31m"[0m[31mIt's Real[1;31m"[0m[31m[0m[32m>[0m][32m>[0m,
+  @genre[32m=[0m[32m#<Genre:0x00007fffdcdf7940[0m @name[32m=[0m[31m[1;31m"[0m[31mcountry[1;31m"[0m[31m[0m, @songs[32m=[0m[[32m#<Song:0x00007fffdcdf7a58[0m ...[32m>[0m][32m>[0m,
+  @name[32m=[0m[31m[1;31m"[0m[31mGreen Aisles[1;31m"[0m[31m[0m[32m>[0m,
+ [32m#<Song:0x00007fffdcdf7710[0m
+  @artist[32m=[0m
+   [32m#<Artist:0x00007fffdcdf79e0[0m
+    @name[32m=[0m[31m[1;31m"[0m[31mReal Estate[1;31m"[0m[31m[0m,
+    @songs[32m=[0m
+     [[32m#<Song:0x00007fffdcdf7a58[0m
+       @artist[32m=[0m[32m#<Artist:0x00007fffdcdf79e0[0m ...[32m>[0m,
+       @genre[32m=[0m[32m#<Genre:0x00007fffdcdf7940[0m @name[32m=[0m[31m[1;31m"[0m[31mcountry[1;31m"[0m[31m[0m, @songs[32m=[0m[[32m#<Song:0x00007fffdcdf7a58[0m ...[32m>[0m][32m>[0m,
+       @name[32m=[0m[31m[1;31m"[0m[31mGreen Aisles[1;31m"[0m[31m[0m[32m>[0m,
+      [32m#<Song:0x00007fffdcdf7710[0m ...[32m>[0m][32m>[0m,
+  @genre[32m=[0m
+   [32m#<Genre:0x00007fffdcdf7c60[0m
+    @name[32m=[0m[31m[1;31m"[0m[31mhip-hop[1;31m"[0m[31m[0m,
+    @songs[32m=[0m
+     [[32m#<Song:0x00007fffdcdf7d78[0m
+       @artist[32m=[0m[32m#<Artist:0x00007fffdcdf7d00[0m @name[32m=[0m[31m[1;31m"[0m[31mJurassic 5[1;31m"[0m[31m[0m, @songs[32m=[0m[[32m#<Song:0x00007fffdcdf7d78[0m ...[32m>[0m][32m>[0m,
+       @genre[32m=[0m[32m#<Genre:0x00007fffdcdf7c60[0m ...[32m>[0m,
+       @name[32m=[0m[31m[1;31m"[0m[31mWhat's Golden[1;31m"[0m[31m[0m[32m>[0m,
+      [32m#<Song:0x00007fffdcdf7710[0m ...[32m>[0m][32m>[0m,
+  @name[32m=[0m[31m[1;31m"[0m[31mIt's Real[1;31m"[0m[31m[0m[32m>[0m,
+ [32m#<Song:0x00007fffdcdf73c8[0m
+  @artist[32m=[0m[32m#<Artist:0x00007fffdcdf7350[0m @name[32m=[0m[31m[1;31m"[0m[31mThundercat[1;31m"[0m[31m[0m, @songs[32m=[0m[[32m#<Song:0x00007fffdcdf73c8[0m ...[32m>[0m][32m>[0m,
+  @genre[32m=[0m[32m#<Genre:0x00007fffdcdf72b0[0m @name[32m=[0m[31m[1;31m"[0m[31mdance[1;31m"[0m[31m[0m, @songs[32m=[0m[[32m#<Song:0x00007fffdcdf73c8[0m ...[32m>[0m][32m>[0m,
+  @name[32m=[0m[31m[1;31m"[0m[31mFor Love I Come[1;31m"[0m[31m[0m[32m>[0m]
