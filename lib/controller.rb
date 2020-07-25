@@ -47,6 +47,6 @@ class MusicLibraryController
     def list_songs_by_artist
         puts "Please enter the name of an artist:"
         fav_artist = gets.split
-        
+        Artist.find_by_name(fav_artist).sort {|a, b| a.name <=> b.name}
     end
 end
