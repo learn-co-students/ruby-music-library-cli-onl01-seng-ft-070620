@@ -6,7 +6,9 @@ class MusicImporter
   end
   
   def files
+    # takes the file path, retrieves the different file names at that location, 
     entries = Dir.entries(self.path)
+    binding.pry
     entries.select {|entry| entry.end_with?(".mp3")}
   end
   
