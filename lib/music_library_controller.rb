@@ -25,9 +25,9 @@ class MusicLibraryController
       when 'list genres'
         list_genres
       when 'list artist'
-        list_artists
+        list_songs_by_artist
       when 'list genre'
-        list_genres
+        list_songs_by_genre
       when 'play song'
         play_song
       else self.call unless input == "exit"
@@ -80,9 +80,8 @@ class MusicLibraryController
   end
   
   def play_song
-    sort_by_name = Song.all.sort_by { |song| song.name }
     puts "Which song number would you like to play?"
-    puts list_songs
+    sort_by_name = Song.all.sort_by { |song| song.name }
     input = gets.chomp.to_i
     if (0..Song.all.length-1).include?(input-1)
       puts "Playing #{sort_by_name[input-1].name} by #{sort_by_name[input-1].artist.name}"
