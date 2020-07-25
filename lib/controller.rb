@@ -22,7 +22,24 @@ class MusicLibraryController
         until input == "exit"
            puts "What would you like to do?"
            input = gets.strip
+           
+           case input
+           when "list songs"
+            list_songs
+        when 'list artists'
+            list_artists
+        when 'list genres'
+            list_genres
+        when 'list artist'
+            list_songs_by_artist
+        when 'list genre'
+            list_songs_by_genre
+        when 'play song'
+            play_song
+        when 'exit'
         end
+    end
+
     end
 
     def list_songs
@@ -60,7 +77,18 @@ class MusicLibraryController
         if genre_input = Genre.find_by_name(genre_input)
             # binding.pry
             genre_input.songs.sort_by! {|song| song.name}.each_with_index do |song, index|
-                puts "#{index + 1}. #{song.artist} - #{song.name}"
+                puts "#{index + 1}. #{song.artist.name} - #{song.name}"
+            end
+        end
+    end
+
+    def play_song
+        puts "Which song number would you like to play?"
+        song_choice = gets.chomp.to_i
+
+        Song.all.sort_by! {|song| song.name}.each_with_index do |song, index|
+            if index + 1 == song_choice
+                puts "Playing #{song.name} by #{song.artist.name}"
             end
         end
     end
