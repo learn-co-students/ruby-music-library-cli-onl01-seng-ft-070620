@@ -3,12 +3,13 @@ class MusicLibraryController
 
   def initialize(path = "./db/mp3s")
     @path = path
-    MusicImporter.new(path).import
+    MusicImporter.new(path).import # creates a new MusicImporter object and invokes #import to create a song from each individual file
   end
   
   def call
     input = nil
     until input == "exit"
+      # greet the user
       puts "Welcome to your music library!"
       puts "To list all of your songs, enter 'list songs'."
       puts "To list all of the artists in your library, enter 'list artists'."
@@ -18,8 +19,19 @@ class MusicLibraryController
       puts "To play a song, enter 'play song'."
       puts "To quit, type 'exit'."
       puts "What would you like to do?"
-      input = gets.strip
-    end
+      input = gets.strip # get the user's input and remove any white space
+      
+      # case statement to account for certain user inputs
+      case input
+        when "list songs" then self.list_songs
+        when "list artists" then self.list_artists
+        when "list genres" then self.list_genres
+        when "list artist" then self.list_songs_by_artist
+        when "list genre" then self.list_songs_by_genre
+        when 'play song' then self.play_song
+      end
+      
+    end # loop ends once input == "exit"
   end
   
   def list_songs

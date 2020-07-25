@@ -18,7 +18,7 @@ class Song
     artist.add_song(self) # invokes Artist#add_song to add the song to the artist's collection of songs
   end
   
-  def genre=(genre) # different approach than #artist=
+  def genre=(genre)
     @genre = genre # sets this song instance's genre property
     genre.add_song(self)  # invokes Genre#add_song to add the song to the genre's collection of songs
   end
@@ -37,6 +37,7 @@ class Song
     self.all.clear
   end
   
+  # initializes a new Song instance using the passed-in file name
   def self.new_from_filename(filename)
     clean = filename.split(" - ")
     song_name = clean[1] # extract the song string
@@ -49,6 +50,7 @@ class Song
     self.new(song_name, artist_obj, genre_obj) # create a new Song instance, with the Artist and Genre instances
   end
   
+  # same functionality as #new_from_filename but also saves the new instance
   def self.create_from_filename(filename)
     self.new_from_filename(filename).save
   end
