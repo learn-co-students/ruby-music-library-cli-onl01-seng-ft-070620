@@ -1,5 +1,3 @@
-# learn spec/008_findable_module_spec.rb
-
 module Concerns::Findable
   def find_by_name(name)
     self.all.find { |index| index.name == name }

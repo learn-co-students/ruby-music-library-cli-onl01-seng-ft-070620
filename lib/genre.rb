@@ -1,21 +1,44 @@
-# learn spec/006_artists_and_genres_spec.rb
+# learn spec/004_songs_and_artists_spec.rb
 
-class Genre < Song
+class Genre
   extend Concerns::Findable
-  attr_accessor :songs
+  attr_accessor :name, :songs
+  # attr_reader
+  @@all = []
   
   def initialize(name)
-    super
+    @name = name
     @songs = []
   end
-
-  def artists
-    unfiltered_artists = self.songs.map {|song| song.artist}
-    unfiltered_artists.uniq
+  
+  def self.all
+    @@all
   end
-
-
-
-
-
+  
+  def save
+    self.class.all << self unless self.class.all.include?(self)
+  end
+  
+  def self.destroy_all
+    self.all.clear
+  end
+  
+  def self.create(name)
+    genre = self.new(name)
+    genre.save
+    genre
+  end
+  
+  def songs
+    @songs
+  end
+  
+  def artists
+    self.songs.map {|song| song.artist}.uniq
+  end
+  
+  
+  
 end
+
+# @artist = artist unless artist==nil

@@ -1,11 +1,8 @@
-# learn spec/009_music_importer_spec.rb --f-f
-
 class MusicImporter
   attr_accessor :path
   
   def initialize(path)
     @path = path
-    # binding.pry
   end
   
   def files
@@ -18,5 +15,4 @@ class MusicImporter
   def import
     self.files.each { |filename| Song.create_from_filename(filename) }
   end
-  
 end

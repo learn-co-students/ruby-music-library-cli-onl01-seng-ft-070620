@@ -1,6 +1,6 @@
-# learn spec/010_music_library_controller_spec.rb
-
 class MusicLibraryController
+  attr_accessor :path
+  
   def initialize(path="./db/mp3s")
     @path = path
     MusicImporter.new(path).import
@@ -21,20 +21,58 @@ class MusicLibraryController
   end
 
   def list_songs
-    sort_by_name = Song.all.sort_by { |song| song.name }
-    
+    sort_by_name = Song.all.uniq.sort_by { |song| song.name }
     sort_by_name.each_with_index do |song, index|
-      puts "#{index =+ 1}. #{song.artist.name} - #{song.name}"
-      # - #{song.genre.name}"
+      puts "#{index += 1}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
     end
-      
   end
 
+  def list_artists
+    sort_by_artist = Artist.all.sort_by { |artist| artist.name }
+    sort_by_artist.each_with_index do |artist, index|
+      puts "#{index += 1}. #{artist.name}"
+    end    
+  end
 
+  def list_genres
+    sort_by_genre = Genre.all.sort_by { |genre| genre.name }
+    sort_by_genre.each_with_index do |genre, index|
+      puts "#{index += 1}. #{genre.name}"
+    end  
+  end
 
+  def list_songs_by_artist
+    puts "Please enter the name of an artist:"
+    input = gets.chomp
+    if Artist.find_by_name(input) != nil
+      artist = Artist.find_by_name(input)
+      sort_songs = artist.songs.sort_by { |song| song.name }
+      sort_songs.each_with_index do |song, index|
+        puts "#{index += 1}. #{song.name} - #{song.genre.name}"
+      end
+    end
+  end
 
-
-
-
+  def list_songs_by_genre
+    puts "Please enter the name of a genre:"
+    input = gets.chomp
+    if Genre.find_by_name(input) != nil
+      genre = Genre.find_by_name(input)
+      sort_songs = genre.songs.sort_by { |song| song.name }
+      sort_songs.each_with_index do |song, index|
+        puts "#{index += 1}. #{song.artist.name} - #{song.name}"
+      end
+    end
+  end
+  
+  def play_song
+    sort_by_name = Song.all.sort_by { |song| song.name }
+    puts "Which song number would you like to play?"
+    list_songs
+    input = gets.chomp.to_i
+    if (0..Song.all.length-1).include?(input-1)
+      puts "Playing #{sort_by_name[input-1].name} by #{sort_by_name[input-1].artist.name}"
+    end
+  end
 
 end
