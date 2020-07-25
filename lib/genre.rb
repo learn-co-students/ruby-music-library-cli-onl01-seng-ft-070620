@@ -12,11 +12,14 @@ class Genre
     self.class.all << self
   end
   
+  # only want to add this new song if it hasn't been created already
   def add_song(song)
     song.genre = self unless song.genre
     songs << song unless songs.include?(song)
   end
   
+  # tests force you to create multiple sources of truth
+  # returns a collection of this genre instance's different artists, through their songs
   def artists
     self.songs.map { |song| song.artist }.uniq
   end

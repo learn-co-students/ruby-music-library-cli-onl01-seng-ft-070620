@@ -5,7 +5,9 @@ class Song
   
   def initialize(name, artist = nil, genre = nil)
     @name = name
+    # only want to call #artist= if invoked with an artist argument
     artist != nil ?  self.artist = artist : @artist = nil
+    # only want to call #genre= if invoked with a genre argument
     genre != nil ?  self.genre = genre : @genre = nil
   end
   
