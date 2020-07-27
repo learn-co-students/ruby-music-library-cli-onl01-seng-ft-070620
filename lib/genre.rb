@@ -21,7 +21,6 @@ class Genre
         songs.collect(&:artist).uniq 
     end
 #(&:artist) returns the .uniq artist within the song collection
-
     def self.create(name)
         genre = new(name)
         genre.save
